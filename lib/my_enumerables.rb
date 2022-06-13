@@ -61,7 +61,13 @@ module Enumerable
     formatted_output
   end
 
-  def my_inject; end
+  def my_inject(initial_value = 0)
+    value = initial_value
+    for number in self
+      value = yield(value, number)
+    end
+    value
+  end
 end
 
 # You will first have to define my_each
