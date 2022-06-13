@@ -29,6 +29,25 @@ module Enumerable
     end
     false
   end
+
+  def my_none?
+    for number in self
+      return false if yield number
+    end
+    true
+  end
+
+  # def my_count
+
+  # end
+
+  # def my_map
+
+  # end
+
+  # def my_inject
+
+  # end
 end
 
 # You will first have to define my_each
@@ -44,5 +63,5 @@ class Array
   end
 end
 
-hello = [1, 1, 2, 3, 5, 8, 13, 21, 34]
-hello.my_all? { |value| value < 5 }
+# hello = [1, 1, 2, 3, 5, 8, 13, 21, 34]
+# hello.my_all? { |value| value < 5 }
