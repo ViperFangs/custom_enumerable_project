@@ -15,6 +15,13 @@ module Enumerable
     end
     formated_output
   end
+
+  def my_all?
+    for number in self
+      return false unless yield number
+    end
+    true
+  end
 end
 
 # You will first have to define my_each
@@ -31,4 +38,4 @@ class Array
 end
 
 hello = [1, 1, 2, 3, 5, 8, 13, 21, 34]
-hello.my_select { |v| v > 10 }
+hello.my_all? { |value| value < 5 }
