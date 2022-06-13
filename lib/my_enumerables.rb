@@ -7,6 +7,14 @@ module Enumerable
       index += 1
     end
   end
+
+  def my_select
+    formated_output = []
+    for number in self
+      formated_output.push(number) if yield(number)
+    end
+    formated_output
+  end
 end
 
 # You will first have to define my_each
@@ -21,3 +29,6 @@ class Array
     end
   end
 end
+
+hello = [1, 1, 2, 3, 5, 8, 13, 21, 34]
+hello.my_select { |v| v > 10 }
