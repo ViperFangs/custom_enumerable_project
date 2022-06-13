@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # rubocop:disable Style/For
 
 # add my_methods to the Enumerable module
@@ -59,9 +61,7 @@ module Enumerable
     formatted_output
   end
 
-  def my_inject
-
-  end
+  def my_inject; end
 end
 
 # You will first have to define my_each
