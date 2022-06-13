@@ -50,13 +50,18 @@ module Enumerable
     count
   end
 
-  # def my_map
+  def my_map
+    formatted_output = []
 
-  # end
+    for number in self
+      formatted_output << yield(number)
+    end
+    formatted_output
+  end
 
-  # def my_inject
+  def my_inject
 
-  # end
+  end
 end
 
 # You will first have to define my_each
@@ -71,8 +76,5 @@ class Array
     end
   end
 end
-
-hello = [1, 1, 2, 3, 5, 8, 13, 21, 34]
-hello.my_count { |value| value > 5 }
 
 # rubocop:enable Style/For
