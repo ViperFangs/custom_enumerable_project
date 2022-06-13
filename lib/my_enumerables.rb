@@ -22,6 +22,13 @@ module Enumerable
     end
     true
   end
+
+  def my_any?
+    for number in self
+      return true if yield number
+    end
+    false
+  end
 end
 
 # You will first have to define my_each
