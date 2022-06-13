@@ -1,5 +1,12 @@
 module Enumerable
   # Your code goes here
+  def my_each_with_index
+    index = 0
+    for number in self
+      yield number, index
+      index += 1
+    end
+  end
 end
 
 # You will first have to define my_each
