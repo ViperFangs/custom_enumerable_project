@@ -1,3 +1,6 @@
+# rubocop:disable Style/For
+
+# add my_methods to the Enumerable module
 module Enumerable
   # Your code goes here
   def my_each_with_index
@@ -37,9 +40,15 @@ module Enumerable
     true
   end
 
-  # def my_count
+  def my_count
+    return to_a.length unless block_given?
 
-  # end
+    count = 0
+    for number in self
+      count += 1 if yield number
+    end
+    count
+  end
 
   # def my_map
 
@@ -63,5 +72,7 @@ class Array
   end
 end
 
-# hello = [1, 1, 2, 3, 5, 8, 13, 21, 34]
-# hello.my_all? { |value| value < 5 }
+hello = [1, 1, 2, 3, 5, 8, 13, 21, 34]
+hello.my_count { |value| value > 5 }
+
+# rubocop:enable Style/For
